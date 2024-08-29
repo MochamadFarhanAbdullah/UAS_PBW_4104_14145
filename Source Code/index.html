@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="..//Source Code/style.css" />
+    <title>Home</title>
+    <div class="FContainer">
+      <nav class="wrapper">
+        <div class="brand">
+          <div class="firstname">Tepok</div>
+          <div class="lastname">Bulu</div>
+        </div>
+        <ul class="navigation">
+          <li><a href="index.html">Home</a></li>
+        </ul>
+      </nav>
+    </div>
+  </head>
+  <body>
+    <div class="box">
+      <div class="row">
+        <div class="column1" style="background-color: transparent">
+          <br />
+          <br />
+          <br />
+          <table class="table nomor1">
+            <tr class="tr">
+              <th class="th1"><a href="partaii.html">Partai</a></th>
+              <th class="th1"><a href="teknikdasar.html">Teknik Dasar</a></th>
+              <th class="th1">
+                <a href="teknikpukulan.html">Teknik Pukulan</a>
+              </th>
+            </tr>
+            <tr class="tr">
+              <th class="th1"><a href="sistem.html">Sistem Permainan</a></th>
+              <th class="th1"><a href="peralatan.html">Peralatan</a></th>
+              <th class="th1"><a href="tips.php">Tips Dalam Bermain</a></th>
+            </tr>
+          </table>
+        </div>
+        <div class="column2" style="background-color: transparent">
+          <h2 style="font-size: 30px">
+            Dapatkan pengetahuan mengenai Bulutangkis di TepokBulu
+          </h2>
+          <p
+            style="
+              font-family: 'Times New Roman', Times, serif;
+              font-size: larger;
+              padding-top: 15px;
+              padding-bottom: 15px;
+            "
+          >
+            TepokBulu adalah website edukasi yang dapat memberikan pengetahuan
+            terbaik mengenai olahraga bulutangkis
+          </p>
+          <a href="pengertiann.html"
+            ><button type="button" class="button">Start Pengertian</button></a
+          >
+        </div>
+      </div>
+    </div>
+    <p style="text-align: center">Tertarik mengikuti pelatihan bulutangkis?</p>
+    <table class="simalakama">
+      <tr class="trek">
+        <th>*</th>
+        <th>1 bulan</th>
+        <th>3 bulan</th>
+        <th>6 bulan</th>
+        <th>1 tahun</th>
+      </tr>
+      <tr class="trek">
+        <td>Dini (9 - 13 tahun)</td>
+        <td>Rp.150.000</td>
+        <td>Rp.400.000</td>
+        <td>Rp.700.000</td>
+        <td>Rp.1.200.000</td>
+      </tr>
+      <tr class="trek">
+        <td>Lanjut (14 - 18 tahun)</td>
+        <td>Rp.200.000</td>
+        <td>Rp.450.000</td>
+        <td>Rp.750.000</td>
+        <td>Rp.1.250.000</td>
+      </tr>
+      <tr class="trek">
+        <td>Dewasa ( > 19 tahun)</td>
+        <td>Rp.250.000</td>
+        <td>Rp.500.000</td>
+        <td>Rp.800.000</td>
+        <td>Rp.1.300.000</td>
+      </tr>
+    </table>
+    <br />
+    <form style="margin-left: 20%">
+      <select
+        class="nilai"
+        id="inputkelas"
+        style="width: 71.7%; height: 25px; font-size: 16px"
+      >
+        <option>Pilih kelas</option>
+        <option>Dini</option>
+        <option>Lanjut</option>
+        <option>Dewasa</option>
+      </select>
+      <br />
+      <br />
+      <select
+        class="nilai"
+        id="inputpaket"
+        style="width: 71.7%; height: 25px; font-size: 16px"
+      >
+        <option>Pilih paket</option>
+        <option>1 bulan</option>
+        <option>3 bulan</option>
+        <option>6 bulan</option>
+        <option>1 tahun</option>
+      </select>
+      <br />
+      <br />
+      <input
+        type="button"
+        style="
+          width: 71.7%;
+          cursor: pointer;
+          height: 30px;
+          color: white;
+          background-color: #252525;
+          font-size: 19px;
+        "
+        
+        value="Hitung"
+        id="buttonhitung"
+      />
+    </form>
+    <!-- onclick="document.getElementById('harga')" -->
+    <!-- 
+function Tombolku()
+{
+var merkMotor="Honda";
+document.getElementById("tampilin").innerHTML=merkMotor;
+} -->
+
+    <div class="tabelhasil" style="margin-left: 250px">
+      <table class="answertable">
+        <tr id="hargatr">
+          <td class="label">Harga</td>
+          <td class="price" id="harga"></td>
+        </tr>
+      </table>
+    </div>
+    <script>
+      const buttonhitung = document.querySelector("#buttonhitung");
+      buttonhitung.addEventListener("click", function () {
+        const inputkelas = document.querySelector("#inputkelas").value;
+        const inputpaket = document.querySelector("#inputpaket").value;
+
+        let price;
+        if (inputkelas == "Dini") {
+          if (inputpaket == "1 bulan") {
+            price = "150.000";
+          } else if (inputpaket == "3 bulan") {
+            price = "400.000";
+          } else if (inputpaket == "6 bulan") {
+            price = "700.000";
+          } else {
+            price = "1.200.000";
+          }
+        } else if (inputkelas == "Lanjut") {
+          if (inputpaket == "1 bulan") {
+            price = "200.000";
+          } else if (inputpaket == "3 bulan") {
+            price = "450.000";
+          } else if (inputpaket == "6 bulan") {
+            price = "750.000";
+          } else {
+            price = "1.250.000";
+          }
+        } else if (inputkelas == "Dewasa") {
+          if (inputpaket == "1 bulan") {
+            price = "250.000";
+          } else if (inputpaket == "3 bulan") {
+            price = "500.000";
+          } else if (inputpaket == "6 bulan") {
+            price = "800.000";
+          } else {
+            price = "1.300.000";
+          }
+        }
+        const harga = document.querySelector("#harga");
+        //harga.innerHTML = <p>Rp+{price}</p>;
+        document.getElementById("harga").innerHTML = "Rp." + price;
+      });
+    </script>
+  </body>
+</html>
